@@ -9,7 +9,13 @@ export namespace AuthApi {
 
   /** 登录接口返回值 */
   export interface LoginResult {
-    accessToken: string;
+    token_type: string;
+    access_token: string;
+    refresh_token: string;
+    expires_in: string;
+    refresh_expires_in: string;
+    client_id: string;
+    scope: string;
   }
 
   export interface RefreshTokenResult {
@@ -22,7 +28,18 @@ export namespace AuthApi {
  * 登录
  */
 export async function loginApi(data: AuthApi.LoginParams) {
-  return requestClient.post<AuthApi.LoginResult>('/auth/login', data);
+  const params = {
+    ...data,
+    grant_type: 'password',
+    client_id: '1001',
+    client_secret: 'aaaa-bbbb-cccc-dddd-eeee',
+    scope: 'profile,email,phone',
+  };
+  return requestClient.post<AuthApi.LoginResult>(
+    '/uaa/openapi/token',
+    undefined,
+    { params },
+  );
 }
 
 /**
@@ -30,8 +47,7 @@ export async function loginApi(data: AuthApi.LoginParams) {
  */
 export async function refreshTokenApi() {
   return baseRequestClient.post<AuthApi.RefreshTokenResult>(
-    '/auth/refresh',
-    undefined,
+    '/uaa/openapi/refresh',
     {
       withCredentials: true,
     },
@@ -42,7 +58,7 @@ export async function refreshTokenApi() {
  * 退出登录
  */
 export async function logoutApi() {
-  return baseRequestClient.post('/auth/logout', undefined, {
+  return baseRequestClient.post('/uaa/openapi/logout', {
     withCredentials: true,
   });
 }
@@ -51,5 +67,5 @@ export async function logoutApi() {
  * 获取用户权限码
  */
 export async function getAccessCodesApi() {
-  return requestClient.get<string[]>('/auth/codes');
+  return requestClient.get<string[]>('/uaa/accounts/codes');
 }

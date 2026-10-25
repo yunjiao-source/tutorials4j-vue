@@ -12,7 +12,7 @@
       "webRoot": "${workspaceFolder}/playground"
     },
     {
-      "type": "chrome",
+      "type": "pwa-msedge",
       "name": "vben admin antd dev",
       "request": "launch",
       "url": "http://localhost:5666",
