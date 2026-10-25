@@ -7,6 +7,6 @@ import { requestClient } from '#/api/request';
  */
 export async function getAllMenusApi() {
   return requestClient.get<RouteRecordStringComponent[]>(
-    '/uaa/upms/menus/tree',
+    '/uaa/upms/menus/router',
   );
 }
