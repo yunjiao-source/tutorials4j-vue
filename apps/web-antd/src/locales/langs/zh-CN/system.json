@@ -1,0 +1,42 @@
+{
+  "_title": "系统管理",
+  "company": {
+    "_title": "公司信息管理",
+    "_list": "公司信息列表",
+    "_name": "公司信息",
+    "organizeCode": "所属组织",
+    "companyType": "公司性质",
+    "industry": "所属行业",
+    "establishmentDate": "成立时间",
+    "phone": "公司电话",
+    "fax": "公司传真",
+    "website": "公司主页",
+    "address": "公司地址",
+    "legalRepresentative": "公司法人",
+    "contactPhone": "联系电话",
+    "contactMobile": "联系手机",
+    "contactEmail": "联系邮箱",
+    "openingBank": "开户银行",
+    "bankAccount": "银行账户",
+    "businessScope": "经营范围"
+  },
+  "config": {
+    "_title": "配置管理",
+    "_list": "配置列表",
+    "_name": "配置"
+  },
+  "dict": {
+    "_title": "字典管理",
+    "_list": "字典列表",
+    "_name": "字典",
+    "dictType": {
+      "title": "字典类型",
+      "list": "字典类型列表",
+      "isTree": "是否树"
+    },
+    "dictData": {
+      "title": "字典数据",
+      "list": "字典数据列表"
+    }
+  }
+}

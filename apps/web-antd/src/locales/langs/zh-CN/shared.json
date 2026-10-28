@@ -1,0 +1,22 @@
+{
+  "operation": "操作",
+  "keyword": "关键字",
+  "id": "主键",
+  "createDate": "创建时间",
+  "createBy": "创建人",
+  "lastModifiedDate": "最后修改时间",
+  "lastModifiedBy": "最后修改人",
+  "reserved": "保留数据",
+  "enabled": "启用",
+  "disabled": "禁用",
+  "code": "代码",
+  "name": "名称",
+  "description": "描述",
+  "shortName": "简称",
+  "category": "分类",
+  "username": "用户名",
+  "jsonData": "json数据",
+  "ordered": "排序号",
+  "yes": "是",
+  "no": "否"
+}

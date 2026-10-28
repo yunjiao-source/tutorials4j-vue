@@ -1,0 +1,106 @@
+{
+  "_title": "认证与授权",
+  "permission": {
+    "_title": "权限点管理",
+    "_list": "权限点列表",
+    "_name": "权限点"
+  },
+  "role": {
+    "_title": "角色管理",
+    "_list": "角色列表",
+    "_name": "角色"
+  },
+  "organize": {
+    "_title": "组织管理",
+    "_list": "组织列表",
+    "_name": "组织"
+  },
+  "authHistory": {
+    "_title": "认证历史数据",
+    "_list": "认证历史列表",
+    "_name": "认证历史",
+    "authStatus": "认证状态"
+  },
+  "user": {
+    "_title": "用户管理",
+    "_list": "用户列表",
+    "_name": "用户",
+    "password": "密码",
+    "name": "姓名",
+    "nickname": "昵称",
+    "phoneNumber": "手机号",
+    "avatar": "图像",
+    "email": "邮件地址",
+    "profile": "个人简介",
+    "website": "个人网站",
+    "gender": "性别",
+    "birthdate": "出生日期",
+    "accountExpireAt": "账户过期日期",
+    "credentialsExpireAt": "密码过期日期",
+    "zoneInfo": "时区",
+    "localeInfo": "区域",
+    "status": "状态",
+    "organizeId": "组织"
+  },
+  "client": {
+    "_title": "应用端管理",
+    "_list": "应用端列表",
+    "_name": "应用端",
+    "clientId": "应用id",
+    "clientSecret": "应用秘钥",
+    "clientName": "应用名称",
+    "contractScopes": "权限范围",
+    "allowRedirectUris": "授权URL",
+    "allowGrantTypes": "授权类型",
+    "subjectId": "应用主体id",
+    "accessTokenTimeout": "访问令牌超时时间",
+    "refreshTokenTimeout": "刷新令牌超时时间",
+    "clientTokenTimeout": "应用令牌超时时间",
+    "maxAccessTokenCount": "最大访问令牌数量",
+    "maxRefreshTokenCount": "最大刷新令牌数量",
+    "maxClientTokenCount": "最大应用令牌数量",
+    "isNewRefresh": "生成新的刷新令牌",
+    "isAutoConfirm": "自动确认授权"
+  },
+  "menu": {
+    "_title": "菜单管理",
+    "_list": "菜单列表",
+    "_name": "菜单",
+    "parentId": "上级菜单",
+    "path": "路由地址",
+    "name": "名称",
+    "component": "页面组件",
+    "redirect": "重定向地址",
+    "type": "类型",
+
+    "activeIcon": "激活图标",
+    "activePath": "激活路径",
+    "breadcrumbUseActivePath": "路由层级生成面包屑",
+    "affixTab": "固定在标签",
+    "affixTabOrder": "固定标签页的顺序",
+    "authority": "角色标识",
+    "badge": "徽章内容",
+    "badgeVariants": "徽标样式",
+    "badgeType": {
+      "dot": "点",
+      "none": "无",
+      "normal": "文字",
+      "title": "徽标类型"
+    },
+
+    "hideChildrenInMenu": "隐藏子菜单",
+    "hideInBreadcrumb": "在面包屑中隐藏",
+    "hideInMenu": "隐藏菜单",
+    "hideInTab": "在标签栏中隐藏",
+    "icon": "图标",
+    "iframeSrc": "iframe 地址",
+    "keepAlive": "缓存标签页",
+    "link": "链接地址",
+    "maxNumOfOpenTab": "标签页最大打开数量",
+    "noBasicLayout": "不使用基础布局",
+    "openInNewWindow": "新窗口打开",
+    "order": "排序",
+    "query": "菜单参数",
+    "titlee": "标题"
+  }
+}

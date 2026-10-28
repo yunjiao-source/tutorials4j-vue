@@ -154,8 +154,7 @@ export const errorMessageResponseInterceptor = (
           errorMessage = $t('ui.fallback.http.requestTimeout');
           break;
         }
-        case 422:
-        case 500: {
+        case 422: {
           errorMessage = error?.response?.data?.detail;
           break;
         }

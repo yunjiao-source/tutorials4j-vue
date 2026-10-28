@@ -1,6 +1,6 @@
 {
   "name": "vben-admin-monorepo",
-  "version": "5.7.0",
+  "version": "5.7.0.1",
   "private": true,
   "keywords": [
     "monorepo",
