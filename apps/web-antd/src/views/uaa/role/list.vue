@@ -51,7 +51,7 @@ const [Grid, gridApi] = useVbenVxeGrid({
       ajax: {
         query: async ({ page }, formValues: RoleSearchSubmitValues) => {
           return await getRoleByPage({
-            page: page.currentPage - 1,
+            page: page.currentPage,
             size: page.pageSize,
             ...formValues,
           });

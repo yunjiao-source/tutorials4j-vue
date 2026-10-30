@@ -1,5 +1,6 @@
 import type { Recordable } from '@vben/types';
 
+import type { CommonApi } from '#/api/core/common';
 import type { UaaRoleApi } from '#/api/uaa/role';
 
 import { requestClient } from '#/api/request';
@@ -11,8 +12,8 @@ export namespace UaaPermissionApi {
     code: string;
     name: string;
     description?: string;
-    reserved?: boolean;
-    enabled?: boolean;
+    reserved?: (typeof CommonApi.YesNo)[number];
+    enabled?: (typeof CommonApi.YesNo)[number];
     createDate?: string;
     lastModifiedDate?: string;
   }

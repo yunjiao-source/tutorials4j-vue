@@ -1,13 +1,20 @@
 import type { Recordable } from '@vben/types';
 
+import type { UaaUserApi } from './user';
+
 import { requestClient } from '#/api/request';
 
 export namespace UaaAuthHistoryApi {
   export interface UaaAuthHistory {
     [key: string]: any;
     id: string;
+    ipAddress?: string;
+    region?: string;
+    platform?: string;
+    browser?: string;
     authStatus: string;
     createdTime?: string;
+    user?: UaaUserApi.UaaUser;
   }
 }
 

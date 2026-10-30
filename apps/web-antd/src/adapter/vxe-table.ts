@@ -51,6 +51,13 @@ setupVbenVxeTable({
             total: 'page.totalElements',
             list: '',
           },
+          ajax: {
+            beforeQuery: async ({ page }) => {
+              // 后端当前页从0开始
+              page.currentPage = page.currentPage - 1;
+              return true;
+            },
+          },
           showActiveMsg: true,
           showResponseMsg: false,
         },

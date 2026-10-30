@@ -19,12 +19,18 @@
     "_title": "认证历史数据",
     "_list": "认证历史列表",
     "_name": "认证历史",
-    "authStatus": "认证状态"
+    "ipAddress": "IP地址",
+    "region": "地区",
+    "platform": "平台",
+    "browser": "游览器",
+    "authStatus": "认证状态",
+    "createdTime": "发生时间"
   },
   "user": {
     "_title": "用户管理",
     "_list": "用户列表",
     "_name": "用户",
+    "username": "账号",
     "password": "密码",
     "name": "姓名",
     "nickname": "昵称",
