@@ -138,6 +138,59 @@ setupVbenVxeTable({
       },
     });
 
+    // 单元格渲染：字典标签（支持多值）
+    // 表格配置项可用 cellRender: { name: 'CellDicts', props: { code: 'user_gender' } }
+    vxeUI.renderer.add('CellDicts', {
+      renderTableDefault({ props }, { column, row }) {
+        const code = props?.code as string | undefined;
+        const rawValue = get(row, column.field);
+        if (!code) {
+          return rawValue;
+        }
+
+        // 统一转换为数组
+        let valueList: any[];
+        if (Array.isArray(rawValue)) {
+          valueList = rawValue;
+        } else if (typeof rawValue === 'string' && rawValue.includes(',')) {
+          // 支持自定义分隔符，例如 props.separator
+          const separator = props?.separator ?? ',';
+          valueList = rawValue.split(separator).map((v) => v.trim());
+        } else {
+          // 单值情况，保持原行为
+          valueList = [rawValue];
+        }
+        // 过滤空值
+        valueList = valueList.filter(
+          (v) => v !== null && v !== undefined && v !== '',
+        );
+        if (valueList.length === 0) return rawValue;
+
+        const dictStore = useDictStore();
+        // 逐个映射为字典项并渲染
+        const renderedItems = valueList.map((value) => {
+          const item = dictStore.getDictItem(code, value);
+
+          let labelValue = value;
+          let labelColor = 'default';
+
+          // 字典中找不到该项，回退显示原值
+          if (item) {
+            labelValue = item.label;
+            if (item.color) {
+              // 有颜色则渲染为 Tag
+              labelColor = item.color;
+            }
+          }
+
+          return h(Tag, { color: labelColor }, { default: () => labelValue });
+        });
+
+        // 返回组合后的节点
+        return renderedItems;
+      },
+    });
+
     vxeUI.renderer.add('CellSwitch', {
       renderTableDefault({ attrs, props }, { column, row }) {
         const loadingKey = `__loading_${column.field}`;

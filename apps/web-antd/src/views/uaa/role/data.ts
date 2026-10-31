@@ -119,7 +119,7 @@ export function useColumns<T = UaaRoleApi.UaaRole>(
       cellRender: {
         attrs: {
           nameField: 'name',
-          nameTitle: $t('shared.name'),
+          nameTitle: $t('uaa.role._name'),
           onClick: onActionClick,
         },
         name: 'CellOperation',

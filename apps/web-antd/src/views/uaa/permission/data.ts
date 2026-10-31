@@ -114,7 +114,7 @@ export function useColumns<T = UaaPermissionApi.UaaPermission>(
       cellRender: {
         attrs: {
           nameField: 'name',
-          nameTitle: $t('shared.name'),
+          nameTitle: $t('uaa.permission._name'),
           onClick: onActionClick,
         },
         name: 'CellOperation',

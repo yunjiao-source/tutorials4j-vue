@@ -28,6 +28,8 @@ export namespace SystemDictApi {
     parentId?: string;
     name: string;
     code: string;
+    label: string;
+    value: string;
     dictTypeId: string;
     dictType: SystemDictType;
     ordered?: number;
@@ -48,7 +50,7 @@ export namespace SystemDictApi {
 /**
  * 获取字典数据分页数据
  */
-async function getDictDataByPage(params: Recordable<any>) {
+async function getDictDataByPage(params?: Recordable<any>) {
   return requestClient.get<Array<SystemDictApi.SystemDictData>>(
     '/system/basic/dict-data/page',
     { params },
@@ -106,7 +108,7 @@ async function deleteDictData(id: string) {
 /**
  * 获取字典类型分页数据
  */
-async function getDictTypeByPage(params: Recordable<any>) {
+async function getDictTypeByPage(params?: Recordable<any>) {
   return requestClient.get<Array<SystemDictApi.SystemDictType>>(
     '/system/basic/dict-type/page',
     { params },
@@ -164,7 +166,7 @@ async function deleteDictType(id: string) {
  * @param params 参数
  * @returns 字典类型数据
  */
-async function getDictTypeRoot(params: Recordable<any>) {
+async function getDictTypeRoot(params?: Recordable<any>) {
   return requestClient.get<Array<SystemDictApi.SystemDictType>>(
     `/system/basic/dict-type/root`,
     { params },
@@ -177,7 +179,7 @@ async function getDictTypeRoot(params: Recordable<any>) {
  * @param params 参数
  * @returns 字典类型数据
  */
-async function getDictTypeChildrenById(id: string, params: Recordable<any>) {
+async function getDictTypeChildrenById(id: string, params?: Recordable<any>) {
   return requestClient.get<Array<SystemDictApi.SystemDictType>>(
     `/system/basic/dict-type/${id}/children`,
     { params },
@@ -189,7 +191,7 @@ async function getDictTypeChildrenById(id: string, params: Recordable<any>) {
  * @param params 参数
  * @returns 字典类型数据
  */
-async function getDictTypeTree(params: Recordable<any>) {
+async function getDictTypeTree(params?: Recordable<any>) {
   return requestClient.get<Array<SystemDictApi.SystemDictTypeTree>>(
     `/system/basic/dict-type/tree`,
     { params },
@@ -199,56 +201,63 @@ async function getDictTypeTree(params: Recordable<any>) {
 /**
  * 获取字典数据
  * @param id 字典类型 ID
- * @param params 参数
  * @returns 字典数据
  */
-async function getDictTypeDataById(id: string, params: Recordable<any>) {
+async function getDictTypeDataById(id: string) {
   return requestClient.get<Array<SystemDictApi.SystemDictData>>(
     `/system/basic/dict-type/by-id/${id}/dict-data`,
-    { params },
   );
 }
 
 /**
- * 获取顶级字典数据
+ * 获取字典数据
  * @param code 字典类型 code
- * @param params 参数
  * @returns 字典数据
  */
-async function getDictTypeDataByCode(code: string, params: Recordable<any>) {
+async function getDictTypeDataByCode(code: string) {
   return requestClient.get<Array<SystemDictApi.SystemDictData>>(
     `/system/basic/dict-type/by-code/${code}/dict-data`,
-    { params },
   );
 }
 
 /**
  * 获取字典数据树
  * @param id 字典类型 ID
- * @param params 参数
  * @returns 字典数据
  */
-async function getDictTypeDataTreeById(id: string, params: Recordable<any>) {
+async function getDictTypeDataTreeById(id: string) {
   return requestClient.get<Array<SystemDictApi.SystemDictDataTree>>(
     `/system/basic/dict-type/by-id/${id}/dict-data/tree`,
-    { params },
   );
 }
 
 /**
- * 获取顶级字典数据树
+ * 获取字典数据树
  * @param code 字典类型 code
- * @param params 参数
  * @returns 字典数据
  */
-async function getDictTypeDataTreeByCode(
-  code: string,
-  params: Recordable<any>,
-) {
+async function getDictTypeDataTreeByCode(code: string) {
   return requestClient.get<Array<SystemDictApi.SystemDictDataTree>>(
     `/system/basic/dict-type/by-code/${code}/dict-data/tree`,
-    { params },
   );
+}
+
+/**
+ * 获取所有的字典数据，Map格式
+ * @returns 字典数据
+ */
+async function getDictTypeAllWithMap() {
+  return requestClient.get<Record<string, SystemDictApi.SystemDictData[]>>(
+    `/system/basic/dict-type/all-with-map`,
+  );
+}
+
+/**
+ * 获取字典版本
+ * @returns 字典数据
+ */
+async function getDictTypeVersion() {
+  return requestClient.get<number>(`/system/basic/dict-type/version`);
 }
 
 export {
@@ -258,6 +267,7 @@ export {
   deleteDictType,
   getDictDataById,
   getDictDataByPage,
+  getDictTypeAllWithMap,
   getDictTypeById,
   getDictTypeByPage,
   getDictTypeChildrenById,
@@ -267,6 +277,7 @@ export {
   getDictTypeDataTreeById,
   getDictTypeRoot,
   getDictTypeTree,
+  getDictTypeVersion,
   updateDictData,
   updateDictType,
 };

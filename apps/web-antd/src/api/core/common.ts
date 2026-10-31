@@ -3,6 +3,10 @@ import { $t } from '#/locales';
 export namespace CommonApi {
   export const Gender = ['male', 'female'] as const;
   export const YesNo = ['no', 'yes'] as const;
+  export enum DictTypeCode {
+    Shouqlx = 'shouqlx',
+    Shouqfw = 'shouqfw',
+  }
 }
 
 function getYesNoOptions() {

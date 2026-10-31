@@ -52,6 +52,16 @@
     "_title": "应用端管理",
     "_list": "应用端列表",
     "_name": "应用端",
+    "_group": {
+      "sqpz": "授权配置",
+      "cspz": "超时配置",
+      "slpz": "数量配置",
+      "kgpz": "开/关配置"
+    },
+    "_help": {
+      "auto": "不填时会自动生成; 创建后不能修改",
+      "allowRedirectUris": "可多个，输入后点击即可添加"
+    },
     "clientId": "应用id",
     "clientSecret": "应用秘钥",
     "clientName": "应用名称",
@@ -65,7 +75,7 @@
     "maxAccessTokenCount": "最大访问令牌数量",
     "maxRefreshTokenCount": "最大刷新令牌数量",
     "maxClientTokenCount": "最大应用令牌数量",
-    "isNewRefresh": "生成新的刷新令牌",
+    "isNewRefresh": "新的刷新令牌",
     "isAutoConfirm": "自动确认授权"
   },
   "menu": {
