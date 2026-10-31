@@ -147,14 +147,17 @@ setupVbenVxeTable({
         if (!code) {
           return rawValue;
         }
+        // 支持自定义分隔符，例如 props.separator
+        const separator = props?.separator ?? ',';
 
         // 统一转换为数组
         let valueList: any[];
         if (Array.isArray(rawValue)) {
           valueList = rawValue;
-        } else if (typeof rawValue === 'string' && rawValue.includes(',')) {
-          // 支持自定义分隔符，例如 props.separator
-          const separator = props?.separator ?? ',';
+        } else if (
+          typeof rawValue === 'string' &&
+          rawValue.includes(separator)
+        ) {
           valueList = rawValue.split(separator).map((v) => v.trim());
         } else {
           // 单值情况，保持原行为
